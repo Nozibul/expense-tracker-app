@@ -1,0 +1,15 @@
+{
+  "name": "json-server-expense-tracker",
+  "version": "1.0.0",
+  "description": "Example in memory Expense Tracker api with json-server",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server --watch db_transactions.json --no-cors true --port 9000"
+  },
+  "keywords": [],
+  "author": "Nozibul",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.17.1"
+  }
+}
