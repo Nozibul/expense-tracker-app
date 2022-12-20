@@ -1,16 +1,22 @@
 {
   "transactions": [
-      {
-          "id": 1,
-          "name": "Salary from Google",
-          "type": "income",
-          "amount": 1000000
-      },
-      {
-          "id": 2,
-          "name": "Family Expenses",
-          "type": "expense",
-          "amount": 200000
-      }
+    {
+      "name": "salary from Facebook",
+      "type": "income",
+      "amount": "500000",
+      "id": 4
+    },
+    {
+      "name": "Family cost",
+      "type": "expense",
+      "amount": "45550",
+      "id": 7
+    },
+    {
+      "name": "Business",
+      "type": "income",
+      "amount": 5000,
+      "id": 8
+    }
   ]
 }

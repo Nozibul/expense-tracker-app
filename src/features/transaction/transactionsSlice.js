@@ -6,7 +6,8 @@ const initialState = {
     transactions: [],
     isLoading: false,
     isError: false,
-    error: ""
+    error: "",
+    editing: {}
 };
 
 // create async thunk 
@@ -32,7 +33,7 @@ export const changeTransactions = createAsyncThunk(
 );
 
 export const removeTransactions = createAsyncThunk(
-    "transaction/changeTransactions", async(id)=>{
+    "transaction/removeTransactions", async(id)=>{
         const transaction = await deleteTransaction(id)
         return transaction ;
     }
@@ -43,6 +44,14 @@ export const removeTransactions = createAsyncThunk(
 const transactionSlice = createSlice({
     name: 'transaction',
     initialState,
+    reducers: {
+        editActive:(state, action)=>{
+            state.editing = action.payload;
+        },
+        editInActive:(state)=>{
+            state.editing = {};
+        },
+    },
     extraReducers: (builder) =>{
         builder
         .addCase(fetchTransactions.pending, (state)=>{
@@ -85,7 +94,7 @@ const transactionSlice = createSlice({
            const updateIndex = state.transactions.findIndex((tIndex)=> tIndex.id === action.payload.id)
            state.transactions[updateIndex] = action.payload;
         })
-        .addCase(createTransactions.rejected, (state, action)=>{
+        .addCase(changeTransactions.rejected, (state, action)=>{
             state.isError = true;
             state.error = action.error?.message ;
             state.isLoading = false;
@@ -97,7 +106,7 @@ const transactionSlice = createSlice({
         .addCase(removeTransactions.fulfilled, (state, action)=>{
             state.isError = false;
             state.isLoading = false;
-            state.transactions = state.transactions.filter(t => t.id !== action.payload)
+            state.transactions = state.transactions.filter(( t )=> t.id !== action.meta.arg)
         })
         .addCase(removeTransactions.rejected, (state, action)=>{
             state.isError = true;
@@ -108,3 +117,4 @@ const transactionSlice = createSlice({
 });
 
 export default transactionSlice.reducer ;
+export const {editActive, editInActive} = transactionSlice.actions ;

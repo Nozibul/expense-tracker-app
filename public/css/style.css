@@ -163,7 +163,6 @@ label {
 }
 
 .cancel_edit {
-    display: none;
     margin-top: 10px;
     background-color: #e6425e !important;
 }
@@ -214,6 +213,10 @@ label {
     .transaction {
         width: 90%;
         margin: 10px auto;
+    }
+
+    .error{
+        color: error;
     }
 
     * {
