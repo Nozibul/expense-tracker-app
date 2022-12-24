@@ -12,8 +12,8 @@ const initialState = {
 
 // create async thunk 
 export const fetchTransactions = createAsyncThunk(
-    "transaction/fetchTransactions", async()=>{
-        const transactions = await getTransaction()
+    "transaction/fetchTransactions", async(type)=>{
+        const transactions = await getTransaction(type)
         return transactions ;
     }
 );

@@ -4,7 +4,7 @@ import { changeTransactions, createTransactions } from "../features/transaction/
 
 const From = () => {
     const dispatch = useDispatch();
-    const { isLoading, isError ,editing} = useSelector((state)=> state.transaction)
+    const { isLoading, isError , editing } = useSelector((state)=> state.transaction)
    
     const [name, setName] = useState('');
     const [type, setType] = useState('');
@@ -30,7 +30,7 @@ const From = () => {
           setEditMode(false)
           reset()
         }
-    }, [editing])
+    }, [editing]);
 
     const handleCreate = (e) =>{
           e.preventDefault()
@@ -49,12 +49,12 @@ const From = () => {
             },
         }))
         reset();
-    }
+    };
 
     const cancelEdit = ()=>{
         setEditMode(false)
         reset()
-    }
+    };
      
   return (
     <div className="form">
@@ -81,7 +81,7 @@ const From = () => {
                         value="income"
                         name="type"
                         checked={type === 'income'}
-                        onChange={(e)=> setType('income')}
+                        onChange={()=> setType('income')}
                     />
                     <label>Income</label>
                 </div>
@@ -92,7 +92,7 @@ const From = () => {
                         name="type"
                         placeholder="Expense"
                         checked={type === 'expense'}
-                        onChange={(e)=> setType('expense')}
+                        onChange={()=> setType('expense')}
                     />
                     <label>Expense</label>
                 </div>
@@ -123,4 +123,4 @@ const From = () => {
   )
 }
 
-export default From
+export default From ;

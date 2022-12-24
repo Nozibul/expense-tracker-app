@@ -1,12 +1,13 @@
 
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { fetchTransactions } from "../features/transaction/transactionsSlice";
 import SingleTransaction from "./SingleTransaction";
 
 const Transactions = () => {
    const dispatch = useDispatch()
-   const {transactions, isLoading, isError,} = useSelector((state)=>state.transaction)
+   const {transactions, isLoading, isError, totalCount} = useSelector((state)=>state.transaction)
  
    useEffect(()=>{
      dispatch(fetchTransactions())
@@ -21,13 +22,13 @@ const Transactions = () => {
     content = <p className="error"> There was an error occurred </p>
    }
    if(!isLoading && !isError && transactions?.length > 0){
-    content = transactions?.map((transaction)=>(
+    content = transactions?.slice(0, 5).map((transaction)=>(
       <SingleTransaction key={transaction.id} transaction={transaction} />
-    ))
+    )).reverse() ;
    }
    if(!isLoading && !isError && transactions?.length === 0){
      content = <p>No Transactions Found!</p>
-   }
+   };
 
   return (
     <>
@@ -37,9 +38,23 @@ const Transactions = () => {
             <ul>
                {content}
             </ul>
+            {(totalCount > 5 || transactions.length > 5) && (
+          <Link
+            to="/transactions"
+            className="btn"
+            style={{
+              textAlign: 'center',
+              background: 'mediumseagreen',
+              display: 'block',
+              textDecoration: 'none',
+            }}
+          >
+            View All
+          </Link>
+        )}
         </div>
     </>
   )
 }
 
-export default Transactions
+export default Transactions ;

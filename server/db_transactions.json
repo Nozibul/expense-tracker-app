@@ -1,22 +1,52 @@
 {
   "transactions": [
     {
-      "name": "salary from Facebook",
+      "name": "Business",
       "type": "income",
-      "amount": "500000",
-      "id": 4
+      "amount": 2000000,
+      "id": 5
+    },
+    {
+      "name": "phone purchase",
+      "type": "expense",
+      "amount": 42000,
+      "id": 6
     },
     {
       "name": "Family cost",
       "type": "expense",
-      "amount": "45550",
+      "amount": 21000,
       "id": 7
     },
     {
       "name": "Business",
       "type": "income",
-      "amount": 5000,
+      "amount": 500000,
       "id": 8
+    },
+    {
+      "name": "Salary",
+      "type": "income",
+      "amount": 70000,
+      "id": 9
+    },
+    {
+      "name": "pendrive purchase",
+      "type": "expense",
+      "amount": "1200",
+      "id": 10
+    },
+    {
+      "name": "salary from facebook",
+      "type": "income",
+      "amount": 300000,
+      "id": 11
+    },
+    {
+      "name": "salary from Apple",
+      "type": "income",
+      "amount": 700000,
+      "id": 12
     }
   ]
 }

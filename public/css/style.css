@@ -177,9 +177,42 @@ label {
 }
 
 .conatiner_of_list_of_transactions ul {
-    max-height: 500px;
+    max-height: 600px;
     overflow-y: auto;
 }
+
+.error {
+    color: red;
+  }
+  
+  .listing-list {
+    display: grid;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  .listing-header {
+    display: flex;
+    width: 500px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .listing-header .types {
+    display: flex;
+    gap: 1rem;
+  }
+  .listing-header .types .input-group {
+    display: flex;
+    gap: 0.2rem;
+  }
+  .listing-header .types .input-group label,
+  .listing-header .types .input-group input {
+    cursor: pointer;
+  }
+  .listing-header .search input {
+    width: 300px;
+    border: 1px solid #4338ca;
+    padding: 0.5rem;
+  }
 
 @media (max-width: 450px) {
     .top_card,
@@ -215,11 +248,18 @@ label {
         margin: 10px auto;
     }
 
-    .error{
-        color: error;
-    }
-
     * {
         font-size: 95% !important;
     }
+
+    @media (min-width: 992px) {
+        .listing-list {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (min-width: 1140px) {
+        .listing-list {
+          grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
 }
