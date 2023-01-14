@@ -13,12 +13,6 @@
       "id": 6
     },
     {
-      "name": "Family cost",
-      "type": "expense",
-      "amount": 21000,
-      "id": 7
-    },
-    {
       "name": "Business",
       "type": "income",
       "amount": 500000,

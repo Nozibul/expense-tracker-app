@@ -7,7 +7,7 @@ import SingleTransaction from "./SingleTransaction";
 
 const Transactions = () => {
    const dispatch = useDispatch()
-   const {transactions, isLoading, isError, totalCount} = useSelector((state)=>state.transaction)
+   const {transactions, isLoading, isError} = useSelector((state)=>state.transaction)
  
    useEffect(()=>{
      dispatch(fetchTransactions())
@@ -18,17 +18,21 @@ const Transactions = () => {
    // decide what to render
    let content = null ;
    if(isLoading) content = <p>Loading...</p> ;
+
    if(!isLoading && isError){
     content = <p className="error"> There was an error occurred </p>
    }
+
    if(!isLoading && !isError && transactions?.length > 0){
     content = transactions?.slice(0, 5).map((transaction)=>(
       <SingleTransaction key={transaction.id} transaction={transaction} />
     )).reverse() ;
    }
+
    if(!isLoading && !isError && transactions?.length === 0){
      content = <p>No Transactions Found!</p>
    };
+   
 
   return (
     <>
@@ -38,7 +42,7 @@ const Transactions = () => {
             <ul>
                {content}
             </ul>
-            {(totalCount > 5 || transactions.length > 5) && (
+            {(transactions.length > 5) && (
           <Link
             to="/transactions"
             className="btn"

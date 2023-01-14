@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import SingleTransaction from "../components/SingleTransaction";
-import { typeChange } from "../features/filter/filterSlice";
+import { clearType, typeChange } from "../features/filter/filterSlice";
 import { fetchTransactions } from "../features/transaction/transactionsSlice";
 
 const TransactionListing = () => {
   const [types, setTypes] = useState("");
+  const [searchText , setSearchText] = useState('');
+  console.log(searchText);
 
    const dispatch = useDispatch();
    const { transaction: {transactions, isLoading, isError},
@@ -13,22 +15,27 @@ const TransactionListing = () => {
          } = useSelector((state)=> state)
    
    
-    // type change handler
+  // type change handler
    const typeChangeHandler =(types)=>{
      setTypes(types);
      dispatch(typeChange(types));
    };
   
   // cancel type handler
-  // const handleClearType = () => {
-  //   dispatch(clearType());
-  //   setTypes('');
-  // };
+  const handleClearType = () => {
+    dispatch(clearType());
+    setTypes('');
+  };
 
+
+  // search 
+  const searchHandler = (e) => {
+     e.preventDefault()
+  };
 
   useEffect(()=>{
     dispatch(fetchTransactions(type))
-  }, [dispatch ,type])
+  }, [dispatch ,type]);
 
 
     // decide what to render
@@ -71,16 +78,18 @@ const TransactionListing = () => {
             />
             <label>Expense</label>
           </div>
+          {types ? <button onClick={handleClearType} className="clrBnt">clear</button> : ""} 
         </div>
-        {/* <form className="search" onSubmit={searchHandler}>
+         <form className="search" onSubmit={searchHandler}>
           <input
             type="text"
             placeholder="search text"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
-        </form> */}
+        </form> 
       </div>
+   
       <div className="container">
         <ul className="listing-list">{content}</ul>
       </div>

@@ -204,6 +204,15 @@ label {
     display: flex;
     gap: 0.2rem;
   }
+  .listing-header .types .clrBnt{
+    padding: 3px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid green;
+    border-radius: 5%;
+    cursor: pointer;
+
+  }
   .listing-header .types .input-group label,
   .listing-header .types .input-group input {
     cursor: pointer;

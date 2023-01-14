@@ -1,7 +1,7 @@
 import axios from "../../utils/axios"
 
 export const getTransaction = async (type) =>{
-    console.log(type);
+   
  //http://localhost:9000/transactions?_&type=expense
 
     let queryString = "" ;
