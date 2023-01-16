@@ -1,7 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    type: ''
+    type: '',
+    search: "",
+
 };
 
 
@@ -16,8 +18,25 @@ const filterSlice =createSlice({
         clearType: (state) => {
             state.type = null;
         },
+        setSearch: (state, action) => {
+            state.search = action.payload;
+        },
+        clearSearch: (state) => {
+            state.search = '';
+        },
+        clearFilter: (state) => {
+            state.search = '';
+            state.type = null;
+        },
     }
 });
 
-export const { typeChange , clearType } = filterSlice.actions ;
+export const { 
+    typeChange , 
+    clearType ,
+    setSearch,
+    clearSearch,
+    clearFilter,
+
+} = filterSlice.actions ;
 export default filterSlice.reducer ;

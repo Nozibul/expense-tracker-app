@@ -41,6 +41,90 @@
       "type": "income",
       "amount": 700000,
       "id": 12
+    },
+    {
+      "name": "salary from google",
+      "type": "expense",
+      "amount": "411",
+      "id": 13
+    },
+    {
+      "name": "Family cost",
+      "type": "expense",
+      "amount": 200000,
+      "id": 14
+    },
+    {
+      "name": "salary from google",
+      "type": "income",
+      "amount": 200000,
+      "id": 15
+    },
+    {
+      "name": "salary from Facebook",
+      "type": "income",
+      "amount": 300000,
+      "id": 16
+    },
+    {
+      "name": "Business",
+      "type": "income",
+      "amount": 5000000,
+      "id": 17
+    },
+    {
+      "name": "pendrive purchase",
+      "type": "expense",
+      "amount": 1000,
+      "id": 18
+    },
+    {
+      "name": "phone Purchase",
+      "type": "expense",
+      "amount": 28000,
+      "id": 19
+    },
+    {
+      "name": "salary from google",
+      "type": "income",
+      "amount": 2000000,
+      "id": 20
+    },
+    {
+      "name": "Family cost",
+      "type": "expense",
+      "amount": 20000,
+      "id": 21
+    },
+    {
+      "name": "Business",
+      "type": "income",
+      "amount": 3000000,
+      "id": 22
+    },
+    {
+      "name": "salary from Facebook",
+      "type": "income",
+      "amount": 400000,
+      "id": 23
+    },
+    {
+      "name": "test",
+      "type": "expense",
+      "amount": 50000,
+      "id": 24
+    },
+    {
+      "name": "income",
+      "type": "income",
+      "amount": 200000,
+      "id": 25
+    },
+    {
+      "name": "salary from google",
+      "type": "income",
+      "amount": 5000,
+      "id": 26
     }
   ]
 }

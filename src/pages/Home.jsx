@@ -1,12 +1,12 @@
 import Balance from '../components/Balance'
-import From from '../components/From'
+import Form from '../components/Form'
 import Transactions from '../components/Transactions'
 
 const Home = () => {
   return (
     <>
       <Balance />
-      <From />
+      <Form />
       <Transactions />
     </>
   )

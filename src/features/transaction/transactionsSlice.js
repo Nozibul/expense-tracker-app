@@ -7,13 +7,14 @@ const initialState = {
     isLoading: false,
     isError: false,
     error: "",
-    editing: {}
+    editing: {},
+    modalEdit: false,
 };
 
 // create async thunk 
 export const fetchTransactions = createAsyncThunk(
-    "transaction/fetchTransactions", async(type)=>{
-        const transactions = await getTransaction(type)
+    "transaction/fetchTransactions", async({type, search})=>{
+        const transactions = await getTransaction({type, search})
         return transactions ;
     }
 );
@@ -50,6 +51,12 @@ const transactionSlice = createSlice({
         },
         editInActive:(state)=>{
             state.editing = {};
+        },
+        setModalEdit: (state) => {
+            state.modalEdit = true;
+        },
+        cancelModalEdit: (state) => {
+            state.modalEdit = false;
         },
     },
     extraReducers: (builder) =>{
@@ -117,4 +124,4 @@ const transactionSlice = createSlice({
 });
 
 export default transactionSlice.reducer ;
-export const {editActive, editInActive} = transactionSlice.actions ;
+export const {editActive, editInActive, setModalEdit, cancelModalEdit} = transactionSlice.actions ;

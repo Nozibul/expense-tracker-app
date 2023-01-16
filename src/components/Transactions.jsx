@@ -8,7 +8,7 @@ import SingleTransaction from "./SingleTransaction";
 const Transactions = () => {
    const dispatch = useDispatch()
    const {transactions, isLoading, isError} = useSelector((state)=>state.transaction)
- 
+   
    useEffect(()=>{
      dispatch(fetchTransactions())
    }, [dispatch]);

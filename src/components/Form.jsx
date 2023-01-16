@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { changeTransactions, createTransactions } from "../features/transaction/transactionsSlice";
 
-const From = () => {
+const Form = () => {
     const dispatch = useDispatch();
     const { isLoading, isError , editing } = useSelector((state)=> state.transaction)
    
@@ -123,4 +123,4 @@ const From = () => {
   )
 }
 
-export default From ;
+export default Form ;

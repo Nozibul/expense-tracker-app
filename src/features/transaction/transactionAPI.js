@@ -1,15 +1,19 @@
 import axios from "../../utils/axios"
 
-export const getTransaction = async (type) =>{
+export const getTransaction = async ({type, search}) =>{
    
  //http://localhost:9000/transactions?_&type=expense
 
     let queryString = "" ;
-    if(type){
+     if(type){
         queryString += `?_&type=${type}` ;
-    };
+     };
 
-    const response = await axios.get(`/transactions${queryString}`);
+    if (search){
+        queryString += `?_&name_like=${search}`;
+     }
+   
+    const response = await axios.get(`/transactions/${queryString}`);
     return response.data;
 };
 

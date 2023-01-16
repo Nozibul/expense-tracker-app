@@ -204,9 +204,12 @@ label {
     display: flex;
     gap: 0.2rem;
   }
-  .listing-header .types .clrBnt{
+  .btn-clr{
     padding: 3px 15px;
     font-size: 16px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 3px;
     font-weight: 500;
     border: 1px solid green;
     border-radius: 5%;
