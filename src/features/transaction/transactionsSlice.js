@@ -13,7 +13,7 @@ const initialState = {
 
 // create async thunk 
 export const fetchTransactions = createAsyncThunk(
-    "transaction/fetchTransactions", async({type, search})=>{
+    "transaction/fetchTransactions", async({type, search} = {})=>{
         const transactions = await getTransaction({type, search})
         return transactions ;
     }

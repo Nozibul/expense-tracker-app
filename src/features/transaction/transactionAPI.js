@@ -1,8 +1,6 @@
 import axios from "../../utils/axios"
 
 export const getTransaction = async ({type, search}) =>{
-   
- //http://localhost:9000/transactions?_&type=expense
 
     let queryString = "" ;
      if(type){
@@ -13,7 +11,7 @@ export const getTransaction = async ({type, search}) =>{
         queryString += `?_&name_like=${search}`;
      }
    
-    const response = await axios.get(`/transactions/${queryString}`);
+    const response = await axios.get(`/transactions${queryString}`);
     return response.data;
 };
 

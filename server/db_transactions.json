@@ -109,12 +109,6 @@
       "id": 23
     },
     {
-      "name": "test",
-      "type": "expense",
-      "amount": 50000,
-      "id": 24
-    },
-    {
       "name": "income",
       "type": "income",
       "amount": 200000,
